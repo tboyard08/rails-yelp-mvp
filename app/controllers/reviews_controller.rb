@@ -16,10 +16,6 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
-  # GET /reviews/1/edit
-  def edit
-  end
-
   # POST /reviews or /reviews.json
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
@@ -36,10 +32,6 @@ class ReviewsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_review
-      @review = Review.find(params.expect(:id))
-    end
 
     # Only allow a list of trusted parameters through.
     def review_params
