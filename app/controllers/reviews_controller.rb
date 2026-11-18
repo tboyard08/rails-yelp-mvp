@@ -1,4 +1,14 @@
 class ReviewsController < ApplicationController
+  before_action :set_review, only: %i[ show]
+
+  # GET /reviews or /reviews.json
+  def index
+    @reviews = Review.all
+  end
+
+  # GET /reviews/1 or /reviews/1.json
+  def show
+  end
 
   # GET /reviews/new
   def new
@@ -6,7 +16,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
-  # POST /reviews
+  # POST /reviews or /reviews.json
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new(review_params)
@@ -22,6 +32,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_review
+      @review = Review.find(params.expect(:id))
+    end
 
     # Only allow a list of trusted parameters through.
     def review_params
