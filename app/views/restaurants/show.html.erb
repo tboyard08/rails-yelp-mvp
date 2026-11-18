@@ -11,10 +11,10 @@
 <br>
 
 <div>
-  <%= link_to "Add review", new_restaurant_review_path(@restaurant)  %>
+  <%= link_to "Add review", new_restaurant_review_path(@restaurant) , class: "btn btn-success" %>
     <br><br>
-  <%= link_to "Destroy this restaurant", @restaurant, method: :delete %>
+  <%= link_to "Destroy this restaurant", @restaurant, method: :delete , class: "btn btn-danger"%>
      <br><br>
-  <%= link_to "Back to restaurants", restaurants_path %>
+  <%= link_to "Back to restaurants", restaurants_path, class: "btn btn-primary"%>
 
   </div>
