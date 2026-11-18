@@ -13,8 +13,8 @@
 <div>
   <%= link_to "Add review", new_restaurant_review_path(@restaurant)  %>
     <br><br>
-  <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
-
+  <%= link_to "Destroy this restaurant", @restaurant, method: :delete %>
+     <br><br>
   <%= link_to "Back to restaurants", restaurants_path %>
 
   </div>
